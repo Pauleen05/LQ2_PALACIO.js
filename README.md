@@ -1,0 +1,1 @@
+# LQ2_PALACIO.js
