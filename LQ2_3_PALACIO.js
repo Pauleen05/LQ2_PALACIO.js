@@ -1,46 +1,42 @@
-console.log("List of Choices:");
-console.log("A. Pepsi Cola - $1.25 each");
-console.log("B. Coca Cola - $1.50 0each");
-console.log("C. Apple (per kg) - $2.50 per kg");
-console.log("D. Orange (per kg) - $2.50 per kg");
-console.log("E. Hotdogs (per kg) - $5.50 per kg");
+// Display the list of choices in the console
+console.log("Choose an item:");
+console.log("A. Pepsi Cola      Php 30.00");
+console.log("B. Coca Cola       Php 35.00");
+console.log("C. Apple (per kg)  Php 100.00");
+console.log("D. Orange (per kg) Php 120.00");
+console.log("E. Hotdogs (per kg) Php 180.00");
 
-var item_choice = prompt("Enter your item choice (A, B, C, D, or E):").toUpperCase();
-var qty = parseFloat(prompt("Enter the quantity:"));
+// Ask the user for their item choice
+let itemChoice = prompt("Enter your item choice (A, B, C, D, or E):").toUpperCase();
 
-var price_per_unit;
-var item_name;
+// Ask for quantity
+let quantity = parseInt(prompt("Enter the quantity to be ordered:"));
 
-switch (item_choice) {
-    case 'A':
-        item_name = "Pepsi Cola";
-        price_per_unit = 1.25;
+// Initialize total price
+let totalPrice;
+
+// Use switch statement to determine price
+switch (itemChoice) {
+    case "A":
+        totalPrice = quantity * 30;
+        alert("You ordered " + quantity + " Pepsi Cola(s). Total Price: Php " + totalPrice);
         break;
-    case 'B':
-        item_name = "Coca Cola";
-        price_per_unit = 1.50;
+    case "B":
+        totalPrice = quantity * 35;
+        alert("You ordered " + quantity + " Coca Cola(s). Total Price: Php " + totalPrice);
         break;
-    case 'C':
-        item_name = "Apple (per kg)";
-        price_per_unit = 2.50;
+    case "C":
+        totalPrice = quantity * 100;
+        alert("You ordered " + quantity + " kg of Apple(s). Total Price: Php " + totalPrice);
         break;
-    case 'D':
-        item_name = "Orange (per kg)";
-        price_per_unit = 2.50;
+    case "D":
+        totalPrice = quantity * 120;
+        alert("You ordered " + quantity + " kg of Orange(s). Total Price: Php " + totalPrice);
         break;
-    case 'E':
-        item_name = "Hotdogs (per kg)";
-        price_per_unit = 5.50;
+    case "E":
+        totalPrice = quantity * 180;
+        alert("You ordered " + quantity + " kg of Hotdog(s). Total Price: Php " + totalPrice);
         break;
     default:
         alert("Invalid choice. Please enter A, B, C, D, or E.");
-        console.log("Invalid choice. Please restart the program.");
-        price_per_unit = null;
-}
-
-if (price_per_nit !== null && !isNaN(qty) && qty > 0) {
-    var total_price = price_per_Unit * qty;
-    alert('The Total Price of the order ${item_name} x ${qty}: $${total_price.toFixed(2)}');
-} else {
-    alert("Invalid quantity. Please enter a valid number greater than 0.");
 }
